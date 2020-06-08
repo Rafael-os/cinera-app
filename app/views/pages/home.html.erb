@@ -1,2 +1,25 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container">
+  <% if user_signed_in? %>
+    <div class="profile-bar">
+      <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png", class: "avatar-large " %>
+      <div class="stats-bar">
+        <div class="stats-info">
+          <a>Ratings</a>
+          <a>1</a>
+        </div>
+        <div>
+          <a>Movies</a>
+          21
+        </div>
+        <div>
+          <a>Cine Lovers</a>
+          44
+        </div>
+      </div>
+    </div>
+  <% else %>
+    <%= image_tag "logo-cinera.jpg", class: "logoss" %>
+  <% end %>
+
+  
+</div>
