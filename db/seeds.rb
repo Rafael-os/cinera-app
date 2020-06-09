@@ -5,6 +5,26 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Movie.destroy_all if Rails.env.development?
-Movie.create!({title:"Scarface", year:"1983", avg_rating:4, url:"www.scarface.com"})
-Post.create!({movie_id: Movie.all.sample.id,user_id: User.all.sample.id ,comment: "Filme bom pakas, recomendo demais. Aposto que o @BrunoTostes vai dormir", rating: 5})
+
+require "json"
+require 'open-uri'
+require "pry"
+
+movies = ["Scarface", "Point Break", "The Exorcist", "Rocky", "First Blood", "The Lord of the Rings", "The Godfather", "The Good, the Bad and the Ugly", "Green Street Hooligans", "Psycho" ]
+
+def create_url(movie_name)  
+  "http://www.omdbapi.com/?&t=#{movie_name}&apikey=fc405fc1"
+end
+
+movies.each do |movie_name|
+  movie_url = create_url(movie_name)
+  response = open(movie_url).read
+  movie_post = JSON.parse(response)
+  movie = Movie.new(
+    title: movie_post["Title"],
+    director: movie_post["Director"],
+    year: movie_post["Year"],
+  )
+  movie.save
+  puts "[#{movie.title}] #{movie.director} - #{movie.year}"
+end

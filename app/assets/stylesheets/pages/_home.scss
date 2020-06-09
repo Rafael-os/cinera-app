@@ -1,1 +1,97 @@
 // Specific CSS for your home-page
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: 2.5rem;    /* Footer height */
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;            /* Footer height */
+  background-color: #393e46;
+}
+
+.footer-content {
+  text-align: center;
+}
+
+.profile-bar {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.stats-bar {
+	display: flex;
+	justify-content: space-around;
+	background-color: #00adb5;
+	border-radius: 5px;
+	width: 50vw;
+}
+
+#stats-align {
+  display: flex;
+  justify-content: center;
+}
+
+.main-content {
+	display: flex;
+  justify-content: space-between;  
+}
+
+.feed {
+  background-color: white;
+  height: 600px;
+  width: 800px;
+  border-radius: 5px;
+  overflow-y: scroll;
+}
+
+.feed-box {
+  border-style: groove;
+  border-color: #00adb5;
+  margin: 10px;
+  padding: 10px;
+  height: 250px;
+  border-radius: 5px;
+}
+
+.comments {
+  background-color: white;
+  height: 80%;
+  border-radius: 5px;
+  border-width: 1px;
+  border-style: groove;
+  border-color: grey;
+}
+
+.att {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.att p {
+  border-style: groove;
+  border-color: #00adb5;
+  border-radius: 5px;
+  border-width: 1px;
+  padding: 3px 10px;
+  margin-right: 20px
+}
+
+.categories {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.categories p:last-of-type {
+  margin-top: auto;
+}
