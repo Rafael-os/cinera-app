@@ -1,2 +1,80 @@
-<h1>Essa é nossa Home Page!</h1>
+<div class="container">
+  <% if user_signed_in? %>
+    <div class="profile-bar">
+      <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png", class: "avatar-large " %>
+      <div class="stats-bar">
+        <div>
+          <p>Ratings</p>
+          <a id="stats-align"> 1 </a>
+        </div>
+        <div>
+          <p>Movies</p>
+          <a id="stats-align"> 21 </a>
+        </div>
+        <div>
+          <p>Cine Lovers</p>
+          <a id="stats-align"> 23 </a>
+        </div>
+      </div>
+    </div>
+  <% else %>
+    <%= image_tag "logo-cinera.jpg", class: "logoss" %>
+  <% end %>
 
+  <div class="main-content">
+    <div class="feed">
+    <!-- insert looping here, when an user makes a new post, it must create a new div with its contents -->
+      <div class="feed-box">
+        <div class=comments>
+          <!-- User comment input -->
+        </div>
+        <span class="att">
+          <p>Cool</p>
+          <p>Comment</p>
+        </span>
+      </div>
+      <!-- begin of clone test -->
+      <div class="feed-box">
+        <div class=comments>
+          
+        </div>
+        <span class="att">
+          <p>Cool</p>
+          <p>Comment</p>
+        </span>
+      </div>
+      <div class="feed-box">
+        <div class=comments>
+          
+        </div>
+        <span class="att">
+          <p>Cool</p>
+          <p>Comment</p>
+        </span>
+      </div>
+      <div class="feed-box">
+        <div class=comments>
+          
+        </div>
+        <span class="att">
+          <p>Cool</p>
+          <p>Comment</p>
+        </span>
+      </div>
+    <!-- End of cloning test -->
+    <!-- End of the loop -->
+    </div>
+    <div class="categories">
+      <p class="btn btn-primary rounded-pill border"> Action </p>
+      <p class="btn btn-primary rounded-pill border"> Comedy </p>
+      <p class="btn btn-primary rounded-pill border"> Drama </p>
+      <p class="btn btn-primary rounded-pill border"> Fantasy </p>
+      <p class="btn btn-primary rounded-pill border"> Horror </p>
+      <p class="btn btn-primary rounded-pill border"> Mystery </p>
+      <p class="btn btn-primary rounded-pill border"> Romance </p>
+      <p class="btn btn-primary rounded-pill border"> Thriller </p>
+      <p class="btn btn-warning rounded-pill border"> Watch a movie </p>
+    </div>
+  </div>
+  
+</div>
