@@ -12,7 +12,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.find(params[:post]) 
+    @post = Post.new(params[:post]) 
     @post.user = current_user
     @post.movie = Movie.find(params[:movie_id])
     @post.save
