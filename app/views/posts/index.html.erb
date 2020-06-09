@@ -1,1 +1,7 @@
 <h1>Esse é nosso index de Post's</h1>
+
+<%= form_tag post_index_path, :method => "get" do %>
+<%= label_tag(:search, "what post do you want to search?") %>
+<%= text_field_tag :search, params[:search] %>
+<%= submit_tag("Search", :name => nil)%>
+<% end %>
