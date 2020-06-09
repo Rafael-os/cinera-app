@@ -3,16 +3,16 @@
     <div class="profile-bar">
       <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png", class: "avatar-large " %>
       <div class="stats-bar">
-        <div class="stats-info">
-          <a>Ratings</a>
-          <a>1</a>
+        <div>
+          <p>Ratings</p>
+          1
         </div>
         <div>
-          <a>Movies</a>
+          <p>Movies</p>
           21
         </div>
         <div>
-          <a>Cine Lovers</a>
+          <p>Cine Lovers</p>
           44
         </div>
       </div>
@@ -21,5 +21,59 @@
     <%= image_tag "logo-cinera.jpg", class: "logoss" %>
   <% end %>
 
+  <div class="main-content">
+    <div class="feed">
+    <!-- insert looping here, when an user makes a new post, it must create a new div with its contents -->
+      <div class="feed-box">
+        <div class=comments>
+          
+        </div>
+        <span class="att">
+          <p style="margin-right: 20px;">Cool</p>
+          <p>Comment</p>
+        </span>
+      </div>
+      <div class="feed-box">
+        <div class=comments>
+          
+        </div>
+        <span class="att">
+          <p style="margin-right: 20px;">Cool</p>
+          <p>Comment</p>
+        </span>
+      </div>
+      <div class="feed-box">
+        <div class=comments>
+          
+        </div>
+        <span class="att">
+          <p style="margin-right: 20px;">Cool</p>
+          <p>Comment</p>
+        </span>
+      </div>
+      <div class="feed-box">
+        <div class=comments>
+          
+        </div>
+        <span class="att">
+          <p style="margin-right: 20px;">Cool</p>
+          <p>Comment</p>
+        </span>
+      </div>
+    <!-- testeing -->
+    <!-- End of the loop -->
+    </div>
+    <div class="categories">
+      <p class="btn btn-primary rounded-pill border"> Action </p>
+      <p class="btn btn-primary rounded-pill border"> Comedy </p>
+      <p class="btn btn-primary rounded-pill border"> Drama </p>
+      <p class="btn btn-primary rounded-pill border"> Fantasy </p>
+      <p class="btn btn-primary rounded-pill border"> Horror </p>
+      <p class="btn btn-primary rounded-pill border"> Mystery </p>
+      <p class="btn btn-primary rounded-pill border"> Romance </p>
+      <p class="btn btn-primary rounded-pill border"> Thriller </p>
+      <p class="btn btn-warning rounded-pill border"> Watch a movie </p>
+    </div>
+  </div>
   
 </div>
