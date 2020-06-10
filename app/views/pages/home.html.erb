@@ -17,10 +17,6 @@
         </div>
       </div>
     </div>
-  <% else %>
-    <%= image_tag "logo-cinera.jpg", class: "logoss" %>
-  <% end %>
-
   <div class="main-content">
     <div class="feed">
     <!-- insert looping here, when an user makes a new post, it must create a new div with its contents -->
@@ -76,5 +72,53 @@
       <p class="btn btn-warning rounded-pill border"> Watch a movie </p>
     </div>
   </div>
-  
+  <% else %>
+  <div class="banner">
+    <img src="assets/cinera-banner-1.jpg" alt="">
+  </div>
+    <!-- <div id="carouselExampleIndicators" class="carousel slide carousel-size" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="d-block w-100" src="assets/logo-cinera.jpg" alt="First slide">
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div> -->
+
+  <div class="infos">
+    <div class="card" style="width: 18rem;">
+      <img src="/assets/friends-icon.png" class="card-img-top icons" alt="...">
+      <div class="card-body">
+        <p class="card-text">Keep in touch with your friends.</p>
+      </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+      <img src="assets/movie-icon.png" class="card-img-top icons" alt="...">
+      <div class="card-body">
+        <p class="card-text">Get movies recommendations based on your taste.</p>
+      </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+      <img src="assets/speech-bubble-comments.png" class="card-img-top icons" alt="...">
+      <div class="card-body">
+        <p class="card-text">Share your opinions about a movie!</p>
+      </div>
+    </div>
+  </div>
+  <div>
+    <a href="users/sign_up" class="btn btn-primary btn-lg"> Sign up!</a>
+  </div>
+  <% end %>
 </div>
