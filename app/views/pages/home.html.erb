@@ -19,12 +19,20 @@
     </div>
   <div class="main-content">
     <div class="feed">
-    <!-- insert looping here, when an user makes a new post, it must create a new div with its contents -->
     <% Post.all.each do |post| %>
       <div class="feed-box">
         <div class=comments>
-          <%= post.comment %>
           <!-- User comment input -->
+          <div class="container main-post">
+            <div>
+              <%= image_tag "#{post.movie.poster}", class:"poster" %>
+            </div>
+            <div class="description">
+              <div> <h4> <%= post.movie.title %> </h4> </div>
+              <div> <h5> By user <%= post.user_id %> </h5> </div>  
+              <div> <%= post.comment %> </div>
+            </div>
+          </div>
         </div>
         <span class="att">
           <p>Cool</p>
@@ -32,7 +40,7 @@
         </span>
       </div>
     <% end %>
-    <!-- End of the loop -->
+
     </div>
     <div class="categories">
       <p class="btn btn-primary rounded-pill border"> Action </p>
