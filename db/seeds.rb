@@ -13,7 +13,7 @@ require "pry"
 movies = ["Scarface", "Point Break", "The Exorcist", "Rocky", "First Blood", "The Lord of the Rings", "The Godfather", "The Good, the Bad and the Ugly", "Green Street Hooligans", "Psycho" ]
 
 def create_url(movie_name)  
-  "http://www.omdbapi.com/?&t=#{movie_name}&apikey=fc405fc1"
+  "http://www.omdbapi.com/?&t=#{movie_name}&apikey=#{OMDB}"
 end
 
 movies.each do |movie_name|
@@ -24,7 +24,8 @@ movies.each do |movie_name|
     title: movie_post["Title"],
     director: movie_post["Director"],
     year: movie_post["Year"],
+    poster: movie_post["Poster"]
   )
   movie.save
-  puts "[#{movie.title}] #{movie.director} - #{movie.year}"
+  puts "#{movie.title} #{movie.director} #{movie.year} #{movie.poster}"
 end
