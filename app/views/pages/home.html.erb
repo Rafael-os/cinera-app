@@ -20,8 +20,10 @@
   <div class="main-content">
     <div class="feed">
     <!-- insert looping here, when an user makes a new post, it must create a new div with its contents -->
+    <% Post.all.each do |post| %>
       <div class="feed-box">
         <div class=comments>
+          <%= post.comment %>
           <!-- User comment input -->
         </div>
         <span class="att">
@@ -29,35 +31,7 @@
           <a href="/comments/new" class="btn btn-primary btn-lg"> Add a comment!</a>
         </span>
       </div>
-      <!-- begin of clone test -->
-      <div class="feed-box">
-        <div class=comments>
-          
-        </div>
-        <span class="att">
-          <p>Cool</p>
-          <p>Comment</p>
-        </span>
-      </div>
-      <div class="feed-box">
-        <div class=comments>
-          
-        </div>
-        <span class="att">
-          <p>Cool</p>
-          <p>Comment</p>
-        </span>
-      </div>
-      <div class="feed-box">
-        <div class=comments>
-          
-        </div>
-        <span class="att">
-          <p>Cool</p>
-          <p>Comment</p>
-        </span>
-      </div>
-    <!-- End of cloning test -->
+    <% end %>
     <!-- End of the loop -->
     </div>
     <div class="categories">
