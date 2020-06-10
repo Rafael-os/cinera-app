@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   def index
     @posts = Post.all
+    @posts = Post.search(params[:search])
   end
 
   def show
@@ -12,9 +13,9 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(params[:post]) 
+    @post = Post.new(post_params) 
     @post.user = current_user
-    @post.movie = Movie.find(params[:movie_id])
+    @post.movie = Movie.find_by(title: params[:post][:movie_id])
     @post.save
   end
 
@@ -32,5 +33,11 @@ class PostsController < ApplicationController
     @post.destroy
 
     redirect_to posts_path
+  end
+
+  private
+
+  def post_params
+    params.require(:post).permit(:title, :post_id, :comment, :rating)
   end
 end

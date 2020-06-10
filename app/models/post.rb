@@ -4,5 +4,5 @@ class Post < ApplicationRecord
 
   validates :comment, presence: true
   validates :rating, presence: true, :inclusion => 1..5
-  
+    
 end
