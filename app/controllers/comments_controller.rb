@@ -12,10 +12,14 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @comment = Comment.new(params[:comment]) 
+    @comment = Comment.new(comment_params) 
     @comment.user = current_user
-    @comment.movie = Movie.find(params[:movie_id])
-    @comment.save
+    @comment.post = Post.last
+    if @comment.save
+      render :index
+    else
+      render :new
+    end
   end
 
   def edit
@@ -33,4 +37,9 @@ class CommentsController < ApplicationController
 
     redirect_to comments_path
   end
+
+  def comment_params
+    params.require(:comment).permit(:content)
+  end
+
 end

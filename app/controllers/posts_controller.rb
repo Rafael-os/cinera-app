@@ -13,9 +13,9 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(params[:post]) 
+    @post = Post.new(post_params) 
     @post.user = current_user
-    @post.movie = Movie.find(params[:movie_id])
+    @post.movie = Movie.find_by(title: params[:post][:movie_id])
     @post.save
   end
 
@@ -38,6 +38,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :post_id, :search)
+    params.require(:post).permit(:title, :post_id, :comment, :rating)
   end
 end

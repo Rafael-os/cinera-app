@@ -1,1 +1,3 @@
-<h1>Pagina de comment section</h1>
+<% @comments.each do |comment| %>
+<%= comment.content %>
+<% end %>
