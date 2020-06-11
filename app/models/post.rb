@@ -3,6 +3,5 @@ class Post < ApplicationRecord
   belongs_to :user
 
   validates :comment, presence: true
-  validates :rating, presence: true, :inclusion => 1..5
-  
+  validates :rating, presence: true, :inclusion => 1..5  
 end

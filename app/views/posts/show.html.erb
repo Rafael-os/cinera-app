@@ -1,1 +1,10 @@
-<h1>Esse é nosso show de um post</h1>
+<div class="container main-post">
+  <div>
+    <%= image_tag "#{@post.movie.poster}", class:"poster" %>
+  </div>
+  <div class="description">
+    <div> <h4> <%= @post.movie.title %> </h4> </div>
+    <div> <h5> By user <%= @post.id %> </h5> </div>  
+    <div> <%= @post.comment %> </div>
+  </div>
+</div>

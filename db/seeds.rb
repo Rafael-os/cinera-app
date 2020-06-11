@@ -13,7 +13,9 @@ require "pry"
 movies = ["Scarface", "Point Break", "The Exorcist", "Rocky", "First Blood", "The Lord of the Rings", "The Godfather", "The Good, the Bad and the Ugly", "Green Street Hooligans", "Psycho" ]
 
 def create_url(movie_name)  
-  "http://www.omdbapi.com/?&t=#{movie_name}&apikey=#{ENV['OMDB']}"
+
+  "http://www.omdbapi.com/?&t=#{movie_name}&apikey=#{ENV["OMDB"]}"
+
 end
 
 Movie.destroy_all
