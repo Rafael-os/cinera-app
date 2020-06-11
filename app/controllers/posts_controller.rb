@@ -17,6 +17,7 @@ class PostsController < ApplicationController
     @post.user = current_user
     @post.movie = Movie.find_by(title: params[:post][:movie_id])
     @post.save
+    redirect_to root_path
   end
 
   def edit
