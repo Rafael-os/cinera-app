@@ -3,16 +3,24 @@
 }
 
 .banner {
-  padding: 20px 0;
-  
+  // padding: 20px 0;
+  background-image:  url("cinera-banner-1.jpg");
+  height: 100vh;
+  min-height: 500px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;  
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
 }
 
 .infos {
+  color: white;
   display: flex;
   justify-content: space-between;
   margin-top: 10px;
   padding-top: 25px;
-  border-top: 1px solid #ccc;
   margin-bottom: 10px;
 }
 
@@ -22,4 +30,8 @@
   margin-right: auto;
   margin-left: auto;
   padding-top: 5px;
+}
+
+.transparent {
+  background-color: rgba($color: #ffffff, $alpha: 0.4);
 }
