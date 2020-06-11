@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_09_143647) do
+ActiveRecord::Schema.define(version: 2020_06_10_212811) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,10 @@ ActiveRecord::Schema.define(version: 2020_06_09_143647) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
+  create_table "genres", force: :cascade do |t|
+    t.string "name"
+  end
+
   create_table "movies", force: :cascade do |t|
     t.string "title"
     t.string "director"
@@ -34,6 +38,8 @@ ActiveRecord::Schema.define(version: 2020_06_09_143647) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "poster"
+    t.bigint "genre_id"
+    t.index ["genre_id"], name: "index_movies_on_genre_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -61,6 +67,7 @@ ActiveRecord::Schema.define(version: 2020_06_09_143647) do
 
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
+  add_foreign_key "movies", "genres"
   add_foreign_key "posts", "movies"
   add_foreign_key "posts", "users"
 end
