@@ -19,13 +19,17 @@ def create_url(movie_name)
 end
 
 Movie.destroy_all
+Genre.destroy_all
 
 movies.each do |movie_name|
   movie_url = create_url(movie_name)
   response = open(movie_url).read
   movie_post = JSON.parse(response)
   p movie_post["Genre"]
-  genre = Genre.create!(name: movie_post["Genre"].split(", ").first)
+  genre = Genre.find_by(name: movie_post["Genre"].split(", ").first)
+  if genre.nil?
+    genre = Genre.create!(name: movie_post["Genre"].split(", ").first)
+  end
   movie = Movie.new(
     title: movie_post["Title"],
     director: movie_post["Director"],
