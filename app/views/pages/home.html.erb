@@ -24,13 +24,17 @@
         <div class=comments>
           <!-- User comment input -->
           <div class="container main-post">
-            <div>
+            <div class="review">
               <%= image_tag "#{post.movie.poster}", class:"poster" %>
+              <%= post.rating %>
             </div>
             <div class="description">
               <div> <h4> <%= post.movie.title %> </h4> </div>
-              <div> <h5> By user <%= post.user_id %> </h5> </div>  
-              <div> <%= post.comment %> </div>
+              <div> 
+                <h4> By user <%= post.user_id %> </h4>
+                <h5> Created at: <%= post.created_at %></h5>
+              </div>  
+              <div class="post-comment"> <%= post.comment %> </div>
             </div>
           </div>
         </div>

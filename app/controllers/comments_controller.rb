@@ -16,7 +16,7 @@ class CommentsController < ApplicationController
     @comment.user = current_user
     @comment.post = Post.last
     if @comment.save
-      render :index
+      redirect_to comments_path
     else
       render :new
     end

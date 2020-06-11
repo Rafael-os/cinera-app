@@ -59,7 +59,7 @@
   border-color: #00adb5;
   margin: 10px;
   padding: 10px;
-  height: 250px;
+  height: 340px;
   border-radius: 5px;
 }
 
@@ -94,4 +94,19 @@
 
 .categories p:last-of-type {
   margin-top: auto;
+}
+
+.review {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.post-comment {
+  word-break: break-all;
+  height: 135px;
+}
+
+div h5 {
+  font-size: 10px;
 }
