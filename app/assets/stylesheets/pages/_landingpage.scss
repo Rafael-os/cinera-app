@@ -4,9 +4,8 @@
 
 .banner {
   // padding: 20px 0;
-  background-image:  url("cinera-banner-1.jpg");
-  height: 100vh;
-  min-height: 500px;
+  background-image: url(asset_path('cinera-banner-1.jpg'));
+  min-height: 90vh;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;  
