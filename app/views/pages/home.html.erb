@@ -19,7 +19,7 @@
     </div>
   <div class="main-content">
     <div class="feed">
-    <% Post.all.each do |post| %>
+    <% @posts.each do |post| %>
       <div class="feed-box">
         <div class=comments>
           <!-- User comment input -->
@@ -43,14 +43,9 @@
 
     </div>
     <div class="categories">
-      <p class="btn btn-primary rounded-pill border"> Action </p>
-      <p class="btn btn-primary rounded-pill border"> Comedy </p>
-      <p class="btn btn-primary rounded-pill border"> Drama </p>
-      <p class="btn btn-primary rounded-pill border"> Fantasy </p>
-      <p class="btn btn-primary rounded-pill border"> Horror </p>
-      <p class="btn btn-primary rounded-pill border"> Mystery </p>
-      <p class="btn btn-primary rounded-pill border"> Romance </p>
-      <p class="btn btn-primary rounded-pill border"> Thriller </p>
+      <% @genres.each do |genre|%>
+        <%= link_to genre.name, root_path(genre: genre.id), class: "btn btn-primary rounded-pill border"%>  
+      <% end %> 
       <%= link_to "Watch a movie", genres_path, class: "btn btn-warning rounded-pill border"%>
     </div>
   </div>
