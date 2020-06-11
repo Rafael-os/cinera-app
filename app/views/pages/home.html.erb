@@ -1,5 +1,5 @@
+<% if user_signed_in? %>
 <div class="container">
-  <% if user_signed_in? %>
     <div class="profile-bar">
       <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png", class: "avatar-large " %>
       <div class="stats-bar">
@@ -49,9 +49,32 @@
       <%= link_to "Watch a movie", genres_path, class: "btn btn-warning rounded-pill border"%>
     </div>
   </div>
+  </div>
   <% else %>
   <div class="banner">
-    <img src="assets/cinera-banner-1.jpg" alt="">
+      <div class="text-center">
+        <a href="users/sign_up" class="btn btn-primary btn-lg border"> Sign up!</a>
+      </div>
+    <div class="infos container">
+    <div class="card transparent" style="width: 18rem;">
+      <img src="/assets/friends-icon.png" class="card-img-top icons" alt="...">
+      <div class="card-body">
+        <p class="card-text" style="color: #000000">Keep in touch with your friends.</p>
+      </div>
+    </div>
+    <div class="card transparent" style="width: 18rem;">
+      <img src="assets/movie-icon.png" class="card-img-top icons" alt="...">
+      <div class="card-body">
+        <p class="card-text" style="color: #000000">Get movies recommendations based on your taste.</p>
+      </div>
+    </div>
+    <div class="card transparent" style="width: 18rem;">
+      <img src="assets/speech-bubble-comments.png" class="card-img-top icons" alt="...">
+      <div class="card-body">
+        <p class="card-text" style="color: #000000">Share your opinions about a movie!</p>
+      </div>
+    </div>
+  </div>
   </div>
     <!-- <div id="carouselExampleIndicators" class="carousel slide carousel-size" data-ride="carousel">
       <ol class="carousel-indicators">
@@ -73,29 +96,5 @@
         <span class="sr-only">Next</span>
       </a>
     </div> -->
-
-  <div class="infos">
-    <div class="card" style="width: 18rem;">
-      <img src="/assets/friends-icon.png" class="card-img-top icons" alt="...">
-      <div class="card-body">
-        <p class="card-text">Keep in touch with your friends.</p>
-      </div>
-    </div>
-    <div class="card" style="width: 18rem;">
-      <img src="assets/movie-icon.png" class="card-img-top icons" alt="...">
-      <div class="card-body">
-        <p class="card-text">Get movies recommendations based on your taste.</p>
-      </div>
-    </div>
-    <div class="card" style="width: 18rem;">
-      <img src="assets/speech-bubble-comments.png" class="card-img-top icons" alt="...">
-      <div class="card-body">
-        <p class="card-text">Share your opinions about a movie!</p>
-      </div>
-    </div>
-  </div>
-  <div>
-    <a href="users/sign_up" class="btn btn-primary btn-lg"> Sign up!</a>
-  </div>
   <% end %>
-</div>
+
