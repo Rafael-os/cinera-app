@@ -43,7 +43,7 @@
 
 .main-content {
 	display: flex;
-  justify-content: space-between;  
+  justify-content: space-around;  
 }
 
 .feed {
@@ -109,4 +109,10 @@
 
 div h5 {
   font-size: 10px;
+}
+
+.search_form {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
 }

@@ -7,5 +7,9 @@ class PagesController < ApplicationController
     if params[:genre] 
       @posts = @posts.where(movies: {genre_id: params[:genre].to_i})
     end
+    if params[:query]
+      @posts = @posts.global_search(params[:query])
+    end
   end
+
 end
