@@ -8,7 +8,6 @@
 
 require "json"
 require 'open-uri'
-require "pry"
 
 movies = ["Scarface", "Point Break", "The Exorcist", "Rocky", "First Blood", "The Lord of the Rings", "The Godfather", "The Good, the Bad and the Ugly", "Green Street Hooligans", "Psycho" ]
 

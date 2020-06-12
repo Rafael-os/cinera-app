@@ -13,11 +13,47 @@
                 <h4> By user <%= post.user.email %> </h4>
               <div class="post-comment"> <%= post.comment %> </div>
             </div>
-            <span class="movie-rating"><%= post.rating %></span>
+            <div class="movie-rating">
+              <% case post.rating %>
+              <% when 1 %>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <% when 2 %>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <% when 3 %>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <% when 4 %>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <% when 5 %>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+              <% end %>
+           </div>
           </div>
         </div>
         <span class="att">
           <a href="/comments/new" class="btn btn-primary btn-lg"> Add a comment!</a>
+          <div>
+            <a href="" clas="btn"> View all comments (<%= Comment.all.count %>)</a>
+          </div>
         </span>
       </div>
     <% end %>
