@@ -1,8 +1,8 @@
 <div class="container">
-<%= simple_form_for @post do |f| %>
-  <%= f.input :movie_id, collection: Movie.all.pluck(:title) %>
-  <%= f.input :comment %>
-  <%= f.input :rating, input_html: { min: '1', max: '5' } %>
-  <%= f.button :submit, class: "btn btn-primary" %>
-<% end %>
+  <%= simple_form_for @post do |f| %>
+    <%= f.input :movie_id, collection: Movie.all.pluck(:title) %>
+    <%= f.input :comment %>
+    <%= f.input :rating %>
+    <%= f.button :submit, class: "btn btn-primary" %>
+  <% end %>
 </div>
