@@ -2,7 +2,7 @@
 
 <%# formulario - input text - input submit -  %>
   <div class="form-group">
-  <%= simple_form_for @comment do |f| %>
+  <%= simple_form_for [@post, @comment] do |f| %>
     <%= f.input :content, as: :text %>
     <%= f.button :submit, class: "btn btn-primary" %>
   <% end %>
