@@ -120,3 +120,12 @@ div h5 {
 .checked {
   color: orange;
 }
+
+.infos.container {
+  .card-text {
+    text-align: center;
+  }
+  .card.tranparent {
+    border-radius: 40px;
+  }
+}
