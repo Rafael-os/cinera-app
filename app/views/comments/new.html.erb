@@ -1,14 +1,11 @@
+<div class="container">
 <h1>Pagina de comment section</h1>
 
 <%# formulario - input text - input submit -  %>
   <div class="form-group">
-  <%= simple_form_for @comment do |f| %>
+  <%= simple_form_for [@post, @comment] do |f| %>
     <%= f.input :content, as: :text %>
     <%= f.button :submit, class: "btn btn-primary" %>
   <% end %>
   </div>
-
-<div class="form-group">
-  <label for="comment">Comment:</label>
-  <textarea class="form-control" rows="5" id="comment"></textarea>
 </div>

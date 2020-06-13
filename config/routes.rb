@@ -2,8 +2,9 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :movies
-  resources :comments
-  resources :posts, only: [:create, :new, :show]
+  resources :posts, only: [:create, :new, :show] do 
+    resources :comments, only: [:new, :create]
+  end
   resources :feeds, only: [:index]
   resources :genres, only: [:index]
 

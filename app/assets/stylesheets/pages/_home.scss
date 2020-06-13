@@ -116,3 +116,16 @@ div h5 {
   justify-content: center;
   margin-bottom: 10px;
 }
+
+.checked {
+  color: orange;
+}
+
+.infos.container {
+  .card-text {
+    text-align: center;
+  }
+  .card.tranparent {
+    border-radius: 40px;
+  }
+}

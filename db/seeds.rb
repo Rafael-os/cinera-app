@@ -8,7 +8,6 @@
 
 require "json"
 require 'open-uri'
-require "pry"
 
 movies = ["3 Idiots", "3:10 to Yuma", "8 Mile", "8 Seconds", "9 (2009 animated)", "10 Things I Hate About You", "10th Kingdom, The", "12 Angry Men", "12 Years a Slave",
 "13 Going on 30", "13 Hours: The Secret Soldiers of Benghazi", "13th Warrior, The", "14 Carrot Rabbit", "17 Again", "20th Century Women", "21 Grams", "25th Hour", "27 Dresses",
