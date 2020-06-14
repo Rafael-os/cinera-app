@@ -4,6 +4,7 @@ class PagesController < ApplicationController
   def home
     @posts = Post.includes(:movie)
     @genres = Genre.all.sort_by { |genre| genre.name }
+    @movies = Movie.pluck(:title).sort
     if params[:genre] 
       @posts = @posts.where(movies: {genre_id: params[:genre].to_i})
     end

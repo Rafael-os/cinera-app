@@ -25,7 +25,7 @@ require("channels")
 // External imports
 import "bootstrap";
 import { initSelect2 } from './select2';
-
+import { autocompleteSearch } from './autocomplete';
 // [...]
 
 
@@ -35,5 +35,6 @@ import { initSelect2 } from './select2';
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   initSelect2();
+  autocompleteSearch();
 });
 
