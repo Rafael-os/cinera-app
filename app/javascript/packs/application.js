@@ -26,6 +26,10 @@ require("channels")
 import "bootstrap";
 import { initSelect2 } from './select2';
 import { autocompleteSearch } from './autocomplete';
+
+
+
+
 // [...]
 
 
