@@ -13,4 +13,16 @@ class PagesController < ApplicationController
     end
   end
 
+  def starreview
+
+    case @post.rating
+    when 1
+      
+    when 2
+    when 3
+    when 4
+    when 5
+    end
+  end
+
 end

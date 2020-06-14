@@ -123,3 +123,16 @@ div h5 {
 .autocomplete-suggestions {
   border-radius: 5px
 }
+
+.checked {
+  color: orange;
+}
+
+.infos.container {
+  .card-text {
+    text-align: center;
+  }
+  .card.tranparent {
+    border-radius: 40px;
+  }
+}

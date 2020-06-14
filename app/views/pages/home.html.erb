@@ -13,11 +13,73 @@
                 <h4> By user <%= post.user.email %> </h4>
               <div class="post-comment"> <%= post.comment %> </div>
             </div>
-            <span class="movie-rating"><%= post.rating %></span>
+            <div class="movie-rating">
+              <% case post.rating %>
+              <% when 1 %>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <% when 2 %>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <% when 3 %>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <% when 4 %>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <% when 5 %>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+              <% end %>
+           </div>
           </div>
         </div>
+        
+
+        <div class="modal fade" id='<%= "comment-#{post.id}" %>' tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"><%= "#{post.movie.title} | #{post.user.email}" %></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="comments-section">
+                  <% post.comments.each do |comment| %>
+                    <div class="comment_body">
+                      <p class="comment_user"><%= comment.user.email %>:</p>
+                      <p class="comment_content"><%= comment.content %></p>
+                    </div>
+                  <% end %>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <%= link_to "add a comment", new_post_comment_path(post), class: "btn btn-primary btn-lg" %>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <span class="att">
-          <a href="/comments/new" class="btn btn-primary btn-lg"> Add a comment!</a>
+          <%= link_to "Comments", "#comment-#{post.id}", class: "btn btn-warning rounded-pill border", "data-toggle" => "modal" %>
         </span>
       </div>
     <% end %>
@@ -53,13 +115,13 @@
         </div>
       </div>
       <div class="card transparent" style="width: 18rem;">
-        <%= image_tag "movie-icon.png", class: "card-img-top icons" %>
+        <%= image_tag "film.png", class: "card-img-top icons" %>
         <div class="card-body">
           <p class="card-text" style="color: #000000">Get movies recommendations based on your taste.</p>
         </div>
       </div>
       <div class="card transparent" style="width: 18rem;">
-        <%= image_tag "speech-bubble-comments.png", class: "card-img-top icons" %>
+        <%= image_tag "ticket.png", class: "card-img-top icons" %>
         <div class="card-body">
           <p class="card-text" style="color: #000000">Share your opinions about a movie!</p>
         </div>
