@@ -2,7 +2,7 @@
   <div class="container my-3">
   <div class="main-content">
     <div class="feed">
-    <% @posts.each do |post| %>
+    <% @posts.reverse_each do |post| %>
       <div class="feed-box">
         <div class=comments>
           <!-- User comment input -->
@@ -79,7 +79,7 @@
         </div>
 
         <span class="att">
-          <%= link_to "Comments", "#comment-#{post.id}", class: "btn btn-warning rounded-pill border", "data-toggle" => "modal" %>
+          <%= link_to "Comments (#{post.comments.count})", "#comment-#{post.id}", class: "btn btn-warning rounded-pill border", "data-toggle" => "modal" %>
         </span>
       </div>
     <% end %>
