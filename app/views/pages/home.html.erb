@@ -8,16 +8,15 @@
 
     </div>
     <div class="categories">
-     <%= form_tag root_path, method: :get, class:"search_form" do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control rounded-pill",
-      placeholder: "Find a movie"
-    %>
-    <%= button_tag(type:"submit", class: "btn btn-primary rounded-pill") do%>
-      <i class="fas fa-search"></i>
+    <%= form_tag(root_path, method: 'get', class: "search-form") do %>
+      <div id= "search-data" class="form-search search-data" data-movies="<%= @movies.to_json %>">
+        <%= text_field_tag :query, nil, autocomplete: :off, class: "form-control rounded-pill", placeholder: "Find a movie" %>
+        <%= button_tag(type:"submit", class: "btn btn-primary rounded-pill") do %>
+          <i class="fas fa-search"></i>
+        <% end %>
+      </div>
     <% end %>
-  <% end %>
+     
       <% @genres.each do |genre|%>
         <%= link_to genre.name, root_path(genre: genre.id), class: "btn btn-primary rounded-pill border"%>  
       <% end %> 

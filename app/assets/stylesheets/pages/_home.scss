@@ -85,10 +85,17 @@ div h5 {
   font-size: 10px;
 }
 
-.search_form {
+.search-form {
   display: flex;
   justify-content: center;
   margin-bottom: 10px;
+  #search-data {
+    display: flex;
+  }
+}
+
+.autocomplete-suggestions {
+  border-radius: 5px
 }
 
 .checked {
