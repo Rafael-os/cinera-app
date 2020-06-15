@@ -2,7 +2,7 @@
   <%= image_tag "#{post.movie.poster}", class:"poster" %>
   <div class=comments>
           <h4> <%= post.movie.title %> </h4>
-          <p class="user-email"> By user <%= post.user.email %> </h4>
+          <p class="user-email"> By <%= link_to post.user.username, user_path(post.user.id) %> </h4>
           <div class="post-comment"> <%= post.comment.truncate(100) %> </div>
     <!-- User comment input -->
     <div class="reviews">
@@ -51,7 +51,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel"><%= "#{post.movie.title} | #{post.user.email}" %></h5>
+          <h5 class="modal-title" id="exampleModalLabel"><%= "#{post.movie.title} | #{post.user.username}" %></h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -59,11 +59,12 @@
         <div class="modal-body">
           <div class="comments-section">
             <% post.comments.each do |comment| %>
+
               <div class="d-flex align-items-center mb-3">
                 <p class="user_avatar mr-2"><%= image_tag "https://kitt.lewagon.com/placeholder/users/cveneziani", class: "avatar", alt: "avatar" %> </p>
                 <div class="d-flex flex-column" style="align-items: flex-end">
                   <div class="comment_body">
-                    <p class="comment_user"><%= comment.user.email %>:</p>
+                    <p class="comment_user"><%= comment.user.username %>:</p>
                     <p class="comment_content"><%= comment.content %></p>
                   </div>
                   <span style="font-size: x-small;text-align: flex-end;"><%= comment.created_at.strftime("%d-%m | %H:%M") %></span>

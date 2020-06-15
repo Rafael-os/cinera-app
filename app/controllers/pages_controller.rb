@@ -16,8 +16,7 @@ class PagesController < ApplicationController
   def starreview
 
     case @post.rating
-    when 1
-      
+    when 1 
     when 2
     when 3
     when 4
