@@ -1,16 +1,27 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: beige;
+  background: black;
+
+.nav-login {
+  color: $orange;
 }
 
-.navbar-lewagon .navbar-collapse {
+.nav-link {
+  color:#e67e22a8 !important;
+  font-weight: bold;
+}
+.navbar-collapse {
   flex-grow: 0;
 }
-
-.navbar-lewagon .navbar-brand img {
+.navbar-brand img {
   width: 100px;
 }
 
 .logoss {
   width: 100%;
+}
+
+.active {
+  color: $orange !important;
+}
 }
