@@ -59,16 +59,22 @@
         <div class="modal-body">
           <div class="comments-section">
             <% post.comments.each do |comment| %>
-              <div class="comment_body">
-                <p class="comment_user"><%= comment.user.email %>:</p>
-                <p class="comment_content"><%= comment.content %></p>
+              <div class="d-flex align-items-center mb-3">
+                <p class="user_avatar mr-2"><%= image_tag "https://kitt.lewagon.com/placeholder/users/cveneziani", class: "avatar", alt: "avatar" %> </p>
+                <div class="d-flex flex-column" style="align-items: flex-end">
+                  <div class="comment_body">
+                    <p class="comment_user"><%= comment.user.email %>:</p>
+                    <p class="comment_content"><%= comment.content %></p>
+                  </div>
+                  <span style="font-size: x-small;text-align: flex-end;"><%= comment.created_at.strftime("%d-%m | %H:%M") %></span>
+                </div>
               </div>
             <% end %>
           </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <%= link_to "add a comment", new_post_comment_path(post), class: "btn btn-primary btn-lg" %>
+          <%= link_to "add a comment", new_post_comment_path(post), class: "btn btn-warning" %>
         </div>
       </div>
     </div>
