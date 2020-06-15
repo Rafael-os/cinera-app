@@ -2,7 +2,7 @@
   <%= image_tag "#{post.movie.poster}", class:"poster" %>
   <div class=comments>
           <h4> <%= post.movie.title %> </h4>
-          <p class="user-email"> By <%= post.user.username %> </h4>
+          <p class="user-email"> By <%= link_to post.user.username, user_path(post.user.id) %> </h4>
           <div class="post-comment"> <%= post.comment.truncate(100) %> </div>
     <!-- User comment input -->
     <div class="reviews">
@@ -51,7 +51,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel"><%= "#{post.movie.title} | #{post.user.email}" %></h5>
+          <h5 class="modal-title" id="exampleModalLabel"><%= "#{post.movie.title} | #{post.user.username}" %></h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -60,7 +60,7 @@
           <div class="comments-section">
             <% post.comments.each do |comment| %>
               <div class="comment_body">
-                <p class="comment_user"><%= comment.user.email %>:</p>
+                <p class="comment_user"><%= comment.user.username %>:</p>
                 <p class="comment_content"><%= comment.content %></p>
               </div>
             <% end %>

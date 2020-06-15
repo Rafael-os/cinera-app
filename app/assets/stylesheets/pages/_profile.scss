@@ -1,0 +1,17 @@
+.main-card {
+  display: flex;
+  justify-content: flex-start;
+  margin: 5px;
+}
+
+.main-card-image {
+  margin: 0px 10px;
+  padding: 0px 5px;
+  height: 100px;
+  width: 100px;
+}
+
+.main-card-details {
+  margin-left: 15px;
+  padding-left: 15px;
+}
