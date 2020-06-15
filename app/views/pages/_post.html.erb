@@ -61,10 +61,14 @@
             <% post.comments.each do |comment| %>
 
               <div class="d-flex align-items-center mb-3">
-                <p class="user_avatar mr-2"><%= image_tag "https://kitt.lewagon.com/placeholder/users/cveneziani", class: "avatar", alt: "avatar" %> </p>
+                <% if comment.user.photo.attached? %>
+                  <p class="user_avatar mr-2"><%= cl_image_tag comment.user.photo.key, class: "avatar", alt: "avatar" %> </p>
+                <% else %>
+                  <p class="user_avatar mr-2"><%= image_tag 'https://f1.pngfuel.com/png/386/684/972/face-icon-user-icon-design-user-profile-share-icon-avatar-black-and-white-silhouette-png-clip-art.png', class: "avatar", alt: "avatar" %> </p>
+                <% end %>
                 <div class="d-flex flex-column" style="align-items: flex-end">
                   <div class="comment_body">
-                    <p class="comment_user"><%= comment.user.username %>:</p>
+                    <p class="comment_user"><%= link_to comment.user.username, user_path(comment.user.id) %>:</p>
                     <p class="comment_content"><%= comment.content %></p>
                   </div>
                   <span style="font-size: x-small;text-align: flex-end;"><%= comment.created_at.strftime("%d-%m | %H:%M") %></span>
