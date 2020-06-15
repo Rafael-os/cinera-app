@@ -68,7 +68,7 @@
                 <% end %>
                 <div class="d-flex flex-column" style="align-items: flex-end">
                   <div class="comment_body">
-                    <p class="comment_user"><%= comment.user.username %>:</p>
+                    <p class="comment_user"><%= link_to comment.user.username, user_path(comment.user.id) %>:</p>
                     <p class="comment_content"><%= comment.content %></p>
                   </div>
                   <span style="font-size: x-small;text-align: flex-end;"><%= comment.created_at.strftime("%d-%m | %H:%M") %></span>
