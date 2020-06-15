@@ -2,7 +2,7 @@ import 'js-autocomplete/auto-complete.css';
 import autocomplete from 'js-autocomplete';
 
 const autocompleteSearch = function() {
-  const movies = JSON.parse(document.getElementById('search-data').dataset.movies)
+  const movies = JSON.parse(document.getElementById('search-data').dataset.movies);
   const searchInput = document.getElementById('query');
 
   if (movies && searchInput) {

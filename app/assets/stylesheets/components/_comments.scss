@@ -2,9 +2,11 @@
   overflow-y: scroll;
   border: none;
   height: 300px;
+  &::-webkit-scrollbar {
+    display: none;
+ } 
   .comment_body {
     padding: 5px 8px;
-    margin: 15px 5px;
     background-color: #f1f1f1;
     border-radius: 5px;
     p.comment_user, 
