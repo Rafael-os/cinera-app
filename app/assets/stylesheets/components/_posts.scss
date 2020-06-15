@@ -66,3 +66,24 @@
     color: black;
   }
 }
+
+.user_avatar {
+  width: 40px;
+  border-radius: 50%;
+}
+
+.modal-content {
+  background-color: grey;
+  .comment_body {
+    width: 100%;
+    background-color: #9da4b0;
+  }
+  .comment_user {
+    color: rgb(255, 165, 0);
+    -webkit-text-stroke: 0.4px black; 
+  }
+  .comment_content {
+    color: black;
+    word-break: break-all
+  }
+}
