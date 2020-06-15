@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="main-card">  
+    <div class="main-card-image">
+      <% if @user.photo.attached? %>
+        <%= cl_image_tag @user.photo.key, height: 100, width: 100 %>
+      <% else %>
+        <%= image_tag 'https://images.uncyc.org/pt/thumb/2/29/Mr-bean-avatar.jpg/250px-Mr-bean-avatar.jpg', height: 100, width: 100 %>
+      <% end %>
+    </div>
+    <div class="main-card-details">
+      <div> <h2>Hello <%= @user.username %></h2> </div>
+      <div> Member since <%= @user.created_at.strftime("%F") %> </div>
+    </div>
+  </div>
+</div>
