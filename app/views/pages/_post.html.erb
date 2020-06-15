@@ -2,7 +2,7 @@
   <%= image_tag "#{post.movie.poster}", class:"poster" %>
   <div class=comments>
           <h4> <%= post.movie.title %> </h4>
-          <p class="user-email"> By user <%= post.user.email %> </h4>
+          <p class="user-email"> By <%= post.user.username %> </h4>
           <div class="post-comment"> <%= post.comment.truncate(100) %> </div>
     <!-- User comment input -->
     <div class="reviews">
