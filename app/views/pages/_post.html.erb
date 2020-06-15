@@ -1,0 +1,84 @@
+<div class="feed-box">
+  <%= image_tag "#{post.movie.poster}", class:"poster" %>
+  <div class=comments>
+          <h4> <%= post.movie.title %> </h4>
+          <p class="user-email"> By <%= link_to post.user.username, user_path(post.user.id) %> </h4>
+          <div class="post-comment"> <%= post.comment.truncate(100) %> </div>
+    <!-- User comment input -->
+    <div class="reviews">
+      <div class="movie-rating">
+        <% case post.rating %>
+        <% when 1 %>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <% when 2 %>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <% when 3 %>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <% when 4 %>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <% when 5 %>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+        <% end %>
+      </div>
+      <span class="att">
+        <%= link_to "Comments (#{post.comments.count})", "#comment-#{post.id}", class: "btn btn-laranja rounded-pill border", "data-toggle" => "modal" %>
+      </span>
+    </div>
+  
+  </div>
+  
+  <div class="modal fade" id='<%= "comment-#{post.id}" %>' tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"><%= "#{post.movie.title} | #{post.user.username}" %></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="comments-section">
+            <% post.comments.each do |comment| %>
+
+              <div class="d-flex align-items-center mb-3">
+                <p class="user_avatar mr-2"><%= image_tag "https://kitt.lewagon.com/placeholder/users/cveneziani", class: "avatar", alt: "avatar" %> </p>
+                <div class="d-flex flex-column" style="align-items: flex-end">
+                  <div class="comment_body">
+                    <p class="comment_user"><%= comment.user.username %>:</p>
+                    <p class="comment_content"><%= comment.content %></p>
+                  </div>
+                  <span style="font-size: x-small;text-align: flex-end;"><%= comment.created_at.strftime("%d-%m | %H:%M") %></span>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <%= link_to "add a comment", new_post_comment_path(post), class: "btn btn-warning" %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

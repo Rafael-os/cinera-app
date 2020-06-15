@@ -7,6 +7,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="node_modules/select2/dist/css/select2.css">
 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
@@ -19,14 +20,7 @@
 
         <%= yield %>
       </div>
-      <footer id="footer">
-        <div class="container footer-content">
-          <a href="#" class="fab fa-github"></a>
-          <a href="#" class="fab fa-instagram"></a>
-          <a href="#" class="fab fa-facebook"></a>
-          <a href="#" class="fab fa-linkedin"></a>
-        </div>
-      </footer>
+      <%= render 'shared/footer' %>
     </div>
   </body>
 </html>
