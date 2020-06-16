@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   
   <%= link_to "#", class: "navbar-brand" do %>
-    <%= image_tag "logo-cinera.png", class: "logoss" %>
+    <%= image_tag "LogoCinera1.jpg", class: "logoss" %>
     <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,7 +27,10 @@
         </li>
       <% else %>
         <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-login" %>
+          <%= link_to "Login", new_user_session_path, class: "btn btn-laranja btn-lg border mr-2" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Sign up", new_user_registration_path, class: "btn btn-laranja btn-lg border mr-2" %>
         </li>
       <% end %>
     </ul>
