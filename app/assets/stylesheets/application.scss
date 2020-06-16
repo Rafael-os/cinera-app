@@ -12,13 +12,20 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
-<<<<<<< HEAD
+
+@import "pages/trix-editor"
 
 #page-container {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
-=======
-@import "pages/trix-editor"
->>>>>>> 44d3793cb3746bd6a14aeae115ef3d26f8007970
+
+
+#content-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
