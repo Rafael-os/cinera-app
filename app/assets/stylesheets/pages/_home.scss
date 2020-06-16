@@ -2,20 +2,8 @@
 #page-container {
   position: relative;
   min-height: 100vh;
+  background-color: #808080;
 }
-
-#content-wrap {
-  padding-bottom: 2.5rem;    /* Footer height */
-  background-color: #e2e2e2;
-}
-
-
-
-.container.my-3 {
-  background-color: #e2e2e2;
-} 
-
-
 
 .profile-bar {
 	display: flex;
@@ -47,8 +35,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #e2e2e2;
-  height: 690px;
+  background: #808080;
+  height: 810px;
   width: 800px;
   border-radius: 5px;
   overflow-y: scroll;
@@ -61,6 +49,14 @@
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  .btn-watch {
+    background-color: #FFA500;
+    border: 2px solid black !important;
+    transition: 0.3s ease;
+  }
+  .btn-laranja {
+    margin-bottom: 5px;
+  }
 }
 
 .categories p:last-of-type {
