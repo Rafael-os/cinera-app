@@ -1,6 +1,9 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  include ActionText::Attachable
+
+
   attr_writer :login
   has_one_attached :photo
   validates :username, presence: true, uniqueness: { case_sensitive: false }
@@ -33,4 +36,6 @@ class User < ApplicationRecord
       errors.add(:username, :invalid)
     end
   end
+
+  
 end
