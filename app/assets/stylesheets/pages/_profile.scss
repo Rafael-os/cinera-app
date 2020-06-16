@@ -1,17 +1,93 @@
 .main-card {
   display: flex;
-  justify-content: flex-start;
-  margin: 5px;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  background-color: white;
+  border-radius: 5px;
+  width: 80%;
+  overflow: hidden;
+  box-shadow: 0 0 5px black;
+    .user-banner {
+      width: 100%;
+      background-size: cover;
+      background-position: center;
+      height: 120px;
+      // position: relative;
+    }
+    .main-card-image {
+      width: 30%;
+      height: 70px;
+      border-radius: 50%;
+      position: absolute;
+      bottom: 157px;
+      right: 90px;
+      -o-object-fit: cover;
+      object-fit: cover;
+      border: 2px solid orange;
+    }
+    .main-card-details {
+      padding: 20px 10px;
+      h2 {
+        font-size: 1.5rem;
+        text-align: center;
+      }
+      hr {
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+      }
+      .user-email {
+        font-style: italic;
+        text-align: center;
+        font-size: 0.8rem;
+      }
+      .user-info {
+        display: flex;
+        justify-content: space-around;
+        font-weight: bolder;
+        font-size: 1.5rem;
+      }
+      .user-labels {
+        font-size: 0.5rem;
+        font-weight: bolder;
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+  
+  
+  
+  .container.profile-container {
+    padding: 10px 0px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .profile {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-grow: 1;
+    .sidebar {
+      display: flex;
+      flex: 0 0 30%;
+      justify-content: center;
+      align-items: start;
+    }
+    .posts-index {
+      flex-grow: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: 10px;
+      .post-user {
+        border-radius: 5px;
+        background-size: cover;
+        width: 200px;
+    }
+    
+  }  
 }
 
-.main-card-image {
-  margin: 0px 10px;
-  padding: 0px 5px;
-  height: 100px;
-  width: 100px;
-}
 
-.main-card-details {
-  margin-left: 15px;
-  padding-left: 15px;
-}
