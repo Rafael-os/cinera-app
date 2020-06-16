@@ -42,3 +42,8 @@ document.addEventListener('turbolinks:load', () => {
   autocompleteSearch();
 });
 
+
+import "controllers"
+
+require("trix")
+require("@rails/actiontext")
