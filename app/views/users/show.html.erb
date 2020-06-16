@@ -1,33 +1,36 @@
-<<<<<<< HEAD
-<div class="container">
-  <div class="main-card">  
-    <div class="main-card-image">
-      <% if @user.photo.attached? %>
-        <%= cl_image_tag @user.photo.key, height: 100, width: 100 %>
-      <% else %>
-        <%= image_tag 'https://images.uncyc.org/pt/thumb/2/29/Mr-bean-avatar.jpg/250px-Mr-bean-avatar.jpg', height: 100, width: 100 %>
-      <% end %>
-    </div>
-    <div class="main-card-details">
-      <div> <h2>Hello <%= @user.username %></h2> </div>
-      <div> Member since <%= @user.created_at.strftime("%F") %> </div>
-    </div>
+<div class="container profile-container">
+  <div class="profile">
+    <div class="sidebar">
+      <div class="main-card"> 
+        <div class="user-banner" style="background-image: url(https://images.unsplash.com/photo-1502957291543-d85480254bf8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjExMzk2fQ&auto=format&fit=crop&w=667&q=80)">
+        </div> 
+        <div class="main-card-details">
+          <% if @user.photo.attached? %>
+            <%= cl_image_tag @user.photo.key, class: "main-card-image" %>
+          <% else %>
+            <%= image_tag 'https://images.uncyc.org/pt/thumb/2/29/Mr-bean-avatar.jpg/250px-Mr-bean-avatar.jpg', class: "main-card-image" %>
+          <% end %>
+        <h2><%= @user.username %></h2>
+        <p class="user-email"><%= @user.email %></p>
+          <hr>
+        <div class="user-info">
+          <span class="user-posts"><%= @user.posts.present? ? @user.posts.count : 0 %></span>
+          <span class="user-followers"> 14 </span>
+          <span class="user-following"> 7 </span>
+        </div>
+        <div class="user-labels">
+          <span class="user-posts">Post's</span>
+          <span class="user-followers"> Followers</span>
+          <span class="user-following"> Following </span>
+        </div>
+      </div>
+    </div>    
+  </div>
+  <div class="posts-index">
+    <% @user.posts.each do |post| %>
+      <div class="post-user" style="background-image: url('<%= image_path post.movie.poster %>')">
+      </div>
+    <% end %>
   </div>
 </div>
-=======
-<div class="container">
-  <div class="main-card">  
-    <div class="main-card-image">
-      <% if @user.photo.attached? %>
-        <%= cl_image_tag @user.photo.key, height: 100, width: 100 %>
-      <% else %>
-        <%= image_tag 'https://f1.pngfuel.com/png/386/684/972/face-icon-user-icon-design-user-profile-share-icon-avatar-black-and-white-silhouette-png-clip-art.png', height: 100, width: 100 %>
-      <% end %>
-    </div>
-    <div class="main-card-details">
-      <div> <h2>Hello <%= @user.username %></h2> </div>
-      <div> Member since <%= @user.created_at.strftime("%F") %> </div>
-    </div>
-  </div>
-</div>
->>>>>>> b1c8fc53fe3034316f3bec1bb0ce690207990cbd
+
