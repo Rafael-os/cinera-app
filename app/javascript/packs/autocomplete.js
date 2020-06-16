@@ -2,10 +2,13 @@ import 'js-autocomplete/auto-complete.css';
 import autocomplete from 'js-autocomplete';
 
 const autocompleteSearch = function() {
-  const movies = JSON.parse(document.getElementById('search-data').dataset.movies);
-  const searchInput = document.getElementById('query');
+  const element = document.getElementById('search-data')
+  if (element) {
+    const movies = JSON.parse(document.getElementById('search-data').dataset.movies);
+    const searchInput = document.getElementById('query');  
+  }
 
-  if (movies && searchInput) {
+  if (element && movies && searchInput) {
     new autocomplete({
       selector: searchInput,
       minChars: 1,
