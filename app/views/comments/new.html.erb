@@ -1,10 +1,11 @@
 <div class="container">
 <h1>Pagina de comment section</h1>
 
+
 <%# formulario - input text - input submit -  %>
   <div class="form-group">
   <%= simple_form_for [@post, @comment] do |f| %>
-    <%= f.input :content, as: :text %>
+    <%= f.input :content, as: :rich_text_area, class: "form-control", :input_html => { data: { controller: "mentions", target: "mentions.field" }} %>
     <%= f.button :submit, class: "btn btn-primary" %>
   <% end %>
   </div>
