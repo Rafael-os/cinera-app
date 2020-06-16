@@ -79,7 +79,8 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <%= link_to "add a comment", new_post_comment_path(post), class: "btn btn-warning" %>
+          <!-- new_post_comment_path(post) -->
+          <%= link_to "Add a comment", new_post_comment_path(post), class: "btn btn-warning", "data-toggle" => "modal" %>
         </div>
       </div>
     </div>
