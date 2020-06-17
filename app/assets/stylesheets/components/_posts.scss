@@ -49,9 +49,11 @@
       font-style: italic;
     }
   }
-  img.poster {
+  img.poster { 
+    width: 250px;
     border-radius: 10px 0 0 10px;
-    flex: 0 0 40%;
+    height: 340px;
+    object-fit: cover;
   }
 }
 
