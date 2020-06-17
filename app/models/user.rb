@@ -12,7 +12,7 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :movies, through: :posts
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable, authentication_keys: [ :login ]
+         :recoverable, :rememberable, :validatable, :authentication_keys => [:login]
 
   def login
     @login || self.username || self.email
