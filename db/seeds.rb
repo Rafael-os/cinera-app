@@ -54,9 +54,9 @@ Genre.destroy_all
 movies.each do |movie_name|
   movie_url = create_url(movie_name.gsub(/[^\d\s\w]/, ""))
   response = open(movie_url).read
-"  movie_post = JSON.parse(response)
-"  create_movie(movie_post) unless movie_post["Response"] == "False"
-"end
+  movie_post = JSON.parse(response)
+  create_movie(movie_post) unless movie_post["Response"] == "False"
+end
 
 
 
