@@ -32,8 +32,15 @@
       <div class="post-user" style="background-image: url('<%= image_path post.movie.poster %>')">
   
         <span class="att">
-          <%= link_to "Comments (#{post.comments.count})", "#comment-#{post.id}", class: "btn btn-laranja", "data-toggle" => "modal" %>
-          <%= link_to "Comments", "#description-#{post.id}", class: "btn btn-laranja", "data-toggle" => "modal" %>
+          <%= link_to "#comment-#{post.id}", class: "btn btn-laranja", "data-toggle" => "modal" do %>
+            <i class="far fa-comment-dots"> <%= post.comments.count %> </i>
+          <% end %>
+        </span>
+      
+        <span class="att-2">
+          <%= link_to "#description-#{post.id}", class: "btn btn-laranja", "data-toggle" => "modal" do  %>
+            <i class="fas fa-info"></i>
+          <% end %>
         </span>
 
         <div class="modal fade" id="<%= "comment-#{post.id}" %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -77,21 +84,18 @@
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel"><%= "#{post.movie.title} | #{post.user.username}" %></h5>
+                  <h5 class="modal-title" id="exampleModalLabel">Description | <%= "#{post.movie.title}" %></h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
 
-              <div class="modal-body">
+              <div class="modal-body desc">
                 <div class="comments-section">
                     <div class="d-flex align-items-center mb-3">
                     <div class="d-flex flex-column" style="align-items: flex-end">
-                      <div class="comment_body">
-                        <p class="comment_user"> Description </p>
-                        <p class="comment_content"><%= post.text_comment %></p>
-                      </div>
-                      <span style="font-size: x-small;text-align: flex-end;"><%#= comment.created_at.strftime("%d-%m | %H:%M") %></span>
+                      <p class="description"><%= post.text_comment %></p>
+                      
                     </div>
                   </div>
                 </div>
