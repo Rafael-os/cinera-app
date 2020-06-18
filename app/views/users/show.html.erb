@@ -33,7 +33,7 @@
   
         <span class="att">
           <%= link_to "Comments (#{post.comments.count})", "#comment-#{post.id}", class: "btn btn-laranja", "data-toggle" => "modal" %>
-          <%= link_to "Comments", "#description-#{post.id}", class: "btn btn-laranja", "data-toggle" => "modal" %>
+          <%= link_to "Description", "#description-#{post.id}", class: "btn btn-laranja", "data-toggle" => "modal" %>
         </span>
 
         <div class="modal fade" id="<%= "comment-#{post.id}" %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
