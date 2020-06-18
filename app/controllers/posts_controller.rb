@@ -1,7 +1,6 @@
 class PostsController < ApplicationController
   def index
     @posts = Post.all
-    @posts = Post.search(params[:search])
   end
 
   def show
@@ -33,7 +32,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.destroy
 
-    redirect_to posts_path
+    redirect_to root_path
   end
 
   private

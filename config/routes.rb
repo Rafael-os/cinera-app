@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :movies
-  resources :posts, only: [:create, :new, :show] do 
+  resources :posts do 
     resources :comments, only: [:new, :create]
   end
   resources :mentions, only: [:index]
