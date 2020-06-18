@@ -20,9 +20,18 @@
         </div>
         <div class="user-labels">
           <span class="user-posts">Post's</span>
-          <span class="user-followers"> Followers</span>
+          <span class="user-followers"> Followers </span>
           <span class="user-following"> Following </span>
         </div>
+        <% if current_user.is_following?(@user.id) %>
+          <%= link_to unfollow_user_path(@user.id), method: :post, remote: true, class:"unfollow-icon" do %>
+            <i class="far fa-heart"></i>
+          <% end %>
+        <% else %>
+          <%= link_to follow_user_path(@user.id), method: :post, remote: true, class:"follow-icon" do %>
+            <i class="fas fa-heart"></i>
+          <% end %>
+        <% end %>
       </div>
     </div>    
   </div>

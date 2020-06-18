@@ -8,7 +8,13 @@ Rails.application.routes.draw do
   resources :mentions, only: [:index]
   resources :feeds, only: [:index]
   resources :genres, only: [:index]
-  resources :users, only: [:show]
+  resources :users, only: [:show] do
+    member do
+      post :follow
+      post :unfollow
+    end
+  end
+
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root to: 'pages#home'
