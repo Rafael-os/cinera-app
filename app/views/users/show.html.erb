@@ -15,8 +15,8 @@
           <hr>
         <div class="user-info">
           <span class="user-posts"><%= @user.posts.present? ? @user.posts.count : 0 %></span>
-          <span class="user-followers"> 14 </span>
-          <span class="user-following"> 7 </span>
+          <span class="user-followers"> <%= @user.followers.count %> </span>
+          <span class="user-following"> <%= @user.following.count %> </span>
         </div>
         <div class="user-labels">
           <span class="user-posts">Post's</span>
@@ -25,11 +25,11 @@
         </div>
         <% if current_user.is_following?(@user.id) %>
           <%= link_to unfollow_user_path(@user.id), method: :post, remote: true, class:"unfollow-icon" do %>
-            <i class="far fa-heart"></i>
+            <i class="fas fa-heart"></i>
           <% end %>
         <% else %>
           <%= link_to follow_user_path(@user.id), method: :post, remote: true, class:"follow-icon" do %>
-            <i class="fas fa-heart"></i>
+            <i class="far fa-heart"></i>
           <% end %>
         <% end %>
       </div>
