@@ -1,7 +1,16 @@
 <div class="feed-box">
   <%= image_tag "#{post.movie.poster}", class:"poster" %>
   <div class=comments>
-          <h4> <%= post.movie.title %> </h4>
+          <div class="title-block">
+            <h4 style="max-width: 280px;"> <%= post.movie.title %> </h4>
+            <% if current_user == post.user %>
+              <div>
+                <%= link_to post_path(post), method: :delete, data: { confirm: 'Are you sure?' } do %> 
+                  <i class="fas fa-trash"></i>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
           <p class="user-email"> By <%= link_to post.user.username, user_path(post.user.id) %> </h4>
           <div class="post-comment"> <%= post.text_comment if post.text_comment %> </div>
     <!-- User comment input -->
