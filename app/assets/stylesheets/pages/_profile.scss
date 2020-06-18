@@ -56,8 +56,12 @@
     }
   }
   
-  
-  
+  .modal-title {
+    font-size: large;
+    color: white;
+  }
+
+
   .container.profile-container {
     padding: 10px 0px;
     flex-grow: 1;
@@ -82,12 +86,35 @@
       grid-template-columns: 1fr 1fr 1fr;
       grid-gap: 10px;
       .post-user {
+        position: relative;
         height: 300px;
         border-radius: 5px;
         background-size: cover;
         width: 200px;
+        .desc {
+          font-style: italic;
+          display: flex;
+          justify-content: center;
+        }
+        .att {
+          display: flex;
+          justify-content: flex-end;
+          position: absolute;
+          bottom: 7px;
+          left: 14px;
+        }
+        .att-2 {
+          display: flex;
+          justify-content: flex-end;
+          position: absolute;
+          bottom: 7px;
+          left: 150px;
+        }
     }
-    
+    .trix-content {
+      font-size: x-large;
+      align-content: center;
+    }
   }  
 }
 
