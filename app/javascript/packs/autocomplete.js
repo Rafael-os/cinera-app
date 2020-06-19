@@ -5,10 +5,7 @@ const autocompleteSearch = function() {
   const element = document.getElementById('search-data')
   if (element) {
     const movies = JSON.parse(document.getElementById('search-data').dataset.movies);
-    const searchInput = document.getElementById('query');  
-  }
-
-  if (element && movies && searchInput) {
+    const searchInput = document.getElementById('query'); 
     new autocomplete({
       selector: searchInput,
       minChars: 1,
@@ -20,7 +17,7 @@ const autocompleteSearch = function() {
               if (~choices[i].toLowerCase().indexOf(term)) matches.push(choices[i]);
           suggest(matches);
       },
-    });
+    }); 
   }
 };
 
