@@ -3,7 +3,9 @@ import autocomplete from 'js-autocomplete';
 
 const autocompleteSearch = function() {
   const element = document.getElementById('search-data')
+  console.log("fora")
   if (element) {
+    console.log("dentro")
     const movies = JSON.parse(document.getElementById('search-data').dataset.movies);
     const searchInput = document.getElementById('query'); 
     new autocomplete({
